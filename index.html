@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Expresiones - Periódico Escolar</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+
+      <img src="img/escudocolegio.png" alt="Escudo de la Institución Educativa San Luis Gonzaga" class="brand-logo">
+
+      <div class="institution-info">
+        <p class="institution-line">
+          INSTITUCIÓN EDUCATIVA SAN LUIS GONZAGA
+        </p>
+        <p class="institution-line">
+          TÉCNICO EN PROGRAMACIÓN DE SOFTWARE
+        </p>
+        <p class="institution-line">
+          COMPLEJO TECNOLÓGICO, TURÍSTICO Y AGROINDUSTRIAL DEL OCC. ANT.
+        </p>
+      </div>
+      <img src="img/escudoSena.png" alt="Logo SENA" class="brand-logo">
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Navegación principal">
+
+    <div class="container nav-inner">
+
+      <div class="mobile-brand">
+        EXPRESIONES
+      </div>
+
+      <div class="nav-links">
+
+        <a href="#" class="nav-link active">
+          INICIO
+        </a>
+        <a href="#proyectos" class="nav-link">
+          PROYECTOS
+        </a>
+        <a href="html/creditoss.html" class="nav-link">
+          NOSOTROS
+        </a>
+        <a href="html/reseña.html" class="nav-link">
+          HISTORIA
+        </a>
+        <a href="html/Redes_colegio.html" class="nav-link">
+          CONTACTO
+        </a>
+        <a href="admin/login.php" class="nav-link">
+          ADMINISTRATIVOS
+        </a>
+      </div>
+      <div class="nav-actions">
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú"
+          aria-expanded="false">
+          <span class="material-symbols-outlined menu-icon">
+            menu
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <section class="hero-section">
+      <!-- Fondos decorativos -->
+      <div class="hero-blob hero-blob-one blob-anim"></div>
+      <div class="hero-blob hero-blob-two blob-anim"></div>
+      <div class="hero-dots bg-dot-pattern"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            PERIÓDICO
+            <span class="accent-text">
+              ESCOLAR
+            </span>
+            <span class="title-line"></span>
+          </h1>
+          <p class="hero-description">
+            Informamos, conectamos e inspiramos a nuestra
+            comunidad educativa a través del periodismo joven
+            y el compromiso institucional.
+          </p>
+          <div class="hero-actions">
+            <a href="html/noticias.html" class="primary-btn" id="btn-noticias">
+              CONOCE NUESTRAS NOTICIAS
+              <span class="material-symbols-outlined btn-icon">
+                arrow_forward
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="carousel-card glass-card">
+            <div class="carousel-track" id="hero-carousel">
+              <div class="carousel-slide image-slide">
+                <img src="img/directivos.jpeg" alt="Estudiante de bienvenida" class="carousel-image" loading="eager">
+              </div>
+              <div class="carousel-slide placeholder-slide slide-community">
+                <div class="placeholder-content">
+                  <img src="img/img_noti3.jpeg" alt="imagenes del colegio">
+                </div>
+              </div>
+              <div class="carousel-slide placeholder-slide slide-projects">
+
+                <div class="placeholder-content">
+
+                  <span class="material-symbols-outlined placeholder-icon placeholder-icon-secondary">
+                    menu_book
+                  </span>
+
+                  <h3 class="placeholder-title">
+                    Proyectos SENA
+                  </h3>
+
+                  <p class="placeholder-text">
+                    Descubre la innovación y el talento
+                    de nuestros aprendices.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- =================================
+                             BOTÓN ANTERIOR
+                        ================================== -->
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Imagen anterior">
+
+              <span class="material-symbols-outlined">
+                chevron_left
+              </span>
+
+            </button>
+
+
+            <!-- =================================
+                             BOTÓN SIGUIENTE
+                        ================================== -->
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Imagen siguiente">
+
+              <span class="material-symbols-outlined">
+                chevron_right
+              </span>
+
+            </button>
+
+
+            <!-- =================================
+                             INDICADORES
+                        ================================== -->
+            <div class="carousel-dots" aria-label="Indicadores del carrusel">
+
+              <button type="button" class="carousel-dot active" data-slide="0" aria-label="Ir a la diapositiva 1"
+                aria-current="true"></button>
+
+              <button type="button" class="carousel-dot" data-slide="1" aria-label="Ir a la diapositiva 2"></button>
+
+              <button type="button" class="carousel-dot" data-slide="2" aria-label="Ir a la diapositiva 3"></button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+             SECCIÓN DE OPCIONES
+        ================================================== -->
+    <section class="features-section" id="nosotros">
+
+      <div class="section-dots bg-dot-pattern"></div>
+
+
+      <div class="container">
+
+        <div class="features-grid">
+
+
+          <!-- =====================================
+                         EXPLORA
+                    ====================================== -->
+          <article class="feature-card glass-card feature-explore">
+
+            <div class="feature-icon-wrap explore-icon">
+
+              <span class="material-symbols-outlined feature-icon icon-filled">
+                explore
+              </span>
+
+            </div>
+
+            <h2 class="feature-title">
+              Explora
+            </h2>
+
+            <p class="feature-text">
+              Descubre las últimas historias, reportajes
+              y eventos que marcan el pulso de nuestra escuela.
+            </p>
+
+          </article>
+
+
+          <!-- =====================================
+                         APRENDE
+                    ====================================== -->
+          <article class="feature-card glass-card feature-learn">
+
+            <div class="feature-icon-wrap learn-icon">
+
+              <span class="material-symbols-outlined feature-icon learn-symbol icon-filled">
+                auto_stories
+              </span>
+
+            </div>
+
+            <h2 class="feature-title">
+              Aprende
+            </h2>
+
+            <p class="feature-text">
+              Accede a recursos educativos y proyectos
+              transversales liderados por nuestros docentes
+              y el SENA.
+            </p>
+
+          </article>
+
+
+          <!-- =====================================
+                         PARTICIPA
+                    ====================================== -->
+          <article class="feature-card glass-card feature-participate">
+
+            <div class="feature-icon-wrap participate-icon">
+
+              <span class="material-symbols-outlined feature-icon participate-symbol icon-filled">
+                groups
+              </span>
+
+            </div>
+
+            <h2 class="feature-title">
+              Participa
+            </h2>
+
+            <p class="feature-text">
+              Tu voz importa. Únete a nuestro comité editorial
+              y contribuye con tus propias noticias e ideas.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <section class="projects-section" id="proyectos"
+    style="padding: 32px 0 24px; background: linear-gradient(180deg, rgba(232,244,255,0.6), rgba(255,255,255,0.92));">
+    <div class="container">
+      <div
+        style="display:flex; justify-content:space-between; align-items:end; gap:18px; margin-bottom:22px; flex-wrap:wrap;">
+        <div>
+          <p
+            style="margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:2px; font-weight:800; color:#1d4ed8;">
+            Proyectos destacados</p>
+          <h2 style="margin:0; font-size: clamp(2rem, 3vw, 3rem); color:#0f172a; font-family:'Montserrat', sans-serif;">
+            Innovación que transforma</h2>
+        </div>
+      </div>
+      <div id="proyectos-grid"
+        style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px;"></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+  <footer class="site-footer" id="contacto">
+
+    <div class="footer-blob"></div>
+
+
+    <div class="container footer-grid">
+
+
+      <!-- =============================================
+                 INFORMACIÓN
+            ============================================== -->
+      <div>
+
+        <span class="footer-brand">
+          EXPRESIONES
+        </span>
+
+        <p class="footer-text">
+          El periódico escolar que da voz a los futuros líderes.
+          Una iniciativa conjunta para la excelencia académica.
+        </p>
+
+      </div>
+
+
+      <!-- =============================================
+                 ENLACES
+            ============================================== -->
+      <div class="footer-links">
+
+        <h3 class="footer-heading">
+          Enlaces Rápidos
+        </h3>
+
+        <a href="#" class="footer-link">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="footer-link">
+          Terms of Service
+        </a>
+
+        <a href="#" class="footer-link">
+          SENA Collaboration
+        </a>
+
+      </div>
+
+
+      <!-- =============================================
+                 CONTACTO
+            ============================================== -->
+      <div>
+
+        <h3 class="footer-heading">
+          Contáctanos
+        </h3>
+
+        <p class="footer-text">
+          Email:
+          iesanluisgonzaga@educar.luisgonzaga.edu.co
+        </p>
+
+
+        <div class="social-icons">
+
+          <button type="button" class="social-icon" aria-label="Red social">
+            <span class="material-symbols-outlined">
+              face_nod
+            </span>
+          </button>
+
+          <button type="button" class="social-icon" aria-label="Galería">
+            <span class="material-symbols-outlined">
+              camera_alt
+            </span>
+          </button>
+
+          <button type="button" class="social-icon" aria-label="Videos">
+            <span class="material-symbols-outlined">
+              video_library
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="container">
+
+      <div class="footer-divider"></div>
+
+      <p class="copyright">
+        © 2026 Periodico EscolarWEB.
+        Todos los derechos reservados.
+        Diseñado por el equipo de desarrollo del periódico escolar.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+         ASISTENTE VIRTUAL - CIRO
+    ====================================================== -->
+
+  <!-- Burbuja de bienvenida -->
+  <div id="chatbot-bienvenida" role="status" aria-live="polite">
+    👋 <strong>¡Hola!</strong>
+    <br>
+    Soy <b>Ciro</b> 😊
+    <br><br>
+    Estoy aquí para ayudarte con el Periódico Escolar.
+  </div>
+
+
+  <!-- Botón flotante -->
+  <button id="chatbot-toggle" type="button" title="Abrir Asistente Virtual" aria-label="Abrir Asistente Virtual">
+
+    <img src="img/asistente.jpeg" alt="Ciro - Asistente Virtual">
+
+  </button>
+
+
+  <!-- Ventana del chatbot -->
+  <section id="chatbot" aria-label="Asistente virtual Ciro">
+
+    <!-- ===============================================
+             ENCABEZADO CHAT
+        ================================================ -->
+    <div class="chat-header">
+
+      <img src="img/asistente.jpeg" alt="Ciro">
+
+      <div>
+
+        <h3>
+          Ciro
+        </h3>
+
+        <small>
+          Asistente Virtual Escolar
+        </small>
+
+      </div>
+
+      <button id="cerrarChat" type="button" aria-label="Cerrar asistente">
+        &times;
+      </button>
+
+    </div>
+
+
+    <!-- ===============================================
+             CUERPO CHAT
+        ================================================ -->
+    <div id="chat-body">
+
+      <div class="mensaje bot">
+
+        <div class="burbuja">
+
+          👋 <b>¡Bienvenido!</b>
+
+          <br><br>
+
+          Soy <b>Ciro</b>.
+
+          <br><br>
+
+          Puedo ayudarte con información sobre:
+
+          <br><br>
+
+
+          <!-- ===================================
+                         BOTONES RÁPIDOS
+                    ==================================== -->
+          <div class="quick-buttons">
+
+            <button type="button" class="quick-button" data-question="¿Qué es el periódico escolar?">
+              📰 Noticias
+            </button>
+
+
+            <button type="button" class="quick-button" data-question="¿Quiénes somos?">
+              🏫 Nosotros
+            </button>
+
+
+            <button type="button" class="quick-button" data-question="¿Dónde está la galería?">
+              📸 Historia
+            </button>
+
+
+            <button type="button" class="quick-button" data-question="¿Qué proyectos existen?">
+              🎓 Proyectos
+            </button>
+
+
+            <button type="button" class="quick-button" data-question="¿Cómo puedo contactar la institución?">
+              📞 Contacto
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===============================================
+             PIE CHAT
+        ================================================ -->
+    <div class="chat-footer">
+
+      <input type="text" id="mensaje" placeholder="Escribe tu pregunta..." autocomplete="off"
+        aria-label="Escribe tu pregunta">
+
+      <button id="enviar" type="button" title="Enviar" aria-label="Enviar mensaje">
+
+        <span class="material-symbols-outlined">
+          send
+        </span>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+         SONIDO DEL CHATBOT
+    ====================================================== -->
+  <audio id="chatSonido" preload="auto">
+    <source src="audio/notificacion.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+  <!-- Funciones principales del sitio -->
+  <script src="js/principal.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks) {
+        navLinks.insertAdjacentHTML('beforeend', '<a href="html/noticias.html" class="nav-link">NOTICIAS</a>');
+      }
+
+      fetch('php/site_data.php')
+        .then((response) => response.ok ? response.json() : Promise.reject(new Error('Error al cargar datos')))
+        .then((data) => {
+          const items = Array.isArray(data.menu) ? data.menu : [];
+          const target = document.querySelector('.nav-links');
+          if (target && items.length) {
+            const uniqueItems = items.filter(item => item.enlace && item.titulo && item.enlace !== '#');
+            const currentItems = [...target.querySelectorAll('a')].map(link => link.textContent.trim().toLowerCase());
+            uniqueItems.forEach((item) => {
+              const slug = item.titulo.trim().toLowerCase();
+              if (!currentItems.includes(slug)) {
+                const link = document.createElement('a');
+                link.href = item.enlace || '#';
+                link.className = 'nav-link';
+                link.textContent = item.titulo.toUpperCase();
+                target.appendChild(link);
+              }
+            });
+          }
+
+          const projectGrid = document.getElementById('proyectos-grid');
+          if (projectGrid) {
+            const proyectos = Array.isArray(data.proyectos) ? data.proyectos : [];
+            if (proyectos.length) {
+              projectGrid.innerHTML = proyectos.map((proyecto, index) => {
+                const imagen = proyecto.imagen || 'img/directivos.jpeg';
+                const enlace = proyecto.enlace || '#';
+                return `
+                  <article style="background:white; border:1px solid rgba(148,163,184,0.2); border-radius:22px; overflow:hidden; box-shadow:0 16px 35px rgba(15,23,42,0.08);">
+                    <img src="${imagen}" alt="${proyecto.titulo}" style="width:100%; height:220px; object-fit:cover; display:block;">
+                    <div style="padding:22px 20px 18px;">
+                      <div style="display:inline-flex; padding:6px 10px; border-radius:999px; background:#dbeafe; color:#1d4ed8; font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">Proyecto ${index + 1}</div>
+                      <h3 style="margin:0 0 10px; color:#0f172a; font-size:1.35rem; font-family:'Montserrat', sans-serif;">${proyecto.titulo}</h3>
+                      <p style="margin:0 0 16px; color:#475569; line-height:1.7; font-size:0.96rem;">${proyecto.descripcion}</p>
+                      <a href="${enlace}" style="display:inline-flex; align-items:center; gap:8px; color:#0f172a; text-decoration:none; font-weight:800; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.8px;">Ver proyecto <span>→</span></a>
+                    </div>
+                  </article>
+                `;
+              }).join('');
+            } else {
+              projectGrid.innerHTML = '<p style="grid-column:1/-1; margin:0; color:#475569; font-weight:600;">Aún no hay proyectos publicados desde el panel administrativo.</p>';
+            }
+          }
+        })
+        .catch(() => {
+          const projectGrid = document.getElementById('proyectos-grid');
+          if (projectGrid) {
+            projectGrid.innerHTML = '<p style="grid-column:1/-1; margin:0; color:#475569; font-weight:600;">No se pudieron cargar los proyectos en este momento.</p>';
+          }
+        });
+    });
+  </script>
+
+  <!-- Funciones del chatbot -->
+  <script src="js/chatbot.js"></script>
+
+</body>
+
+</html>

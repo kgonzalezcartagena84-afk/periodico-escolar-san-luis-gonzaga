@@ -1,0 +1,138 @@
+/* ===== RESET GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.contenedor {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: #e3effc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.redes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.intro-textos {
+  grid-column: 1 / -1; /* Ocupa todo el ancho del grid */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.intro-textos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.intro-textos p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.enlace {
+  background-color: #f9fbfd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03) !important;
+  text-align: center;
+}
+
+.enlace h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #1a4d8f;
+}
+
+.enlace p {
+  font-size: 1rem;
+  color: #333;
+}
+
+
+
+.titulo-con-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: nowrap; /* Evita que los elementos se vayan a otra línea */
+}
+
+.titulo {
+  font-size: clamp(1.2rem, 4vw, 2rem); /* Se adapta al ancho de pantalla */
+  text-align: center;
+  flex: 1; /* El título ocupa el espacio restante */
+}
+
+.titulo-con-logos h1 {
+  font-size: 2rem;
+  color:     rgb(35, 29, 29);
+  margin: 0;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+
+.logo_empresa {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: clamp(40px, 8vw, 100px);
+  height: auto;
+  padding: 5px;
+}
+
+.logo_empresa img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .logo_empresa {
+    top: 10px;
+    right: 10px;
+    width: 60px;
+  }
+}
+
+
+.enlace-limpio {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit;        /* Mantiene el color del texto original */
+  }
+
+  .enlace-limpio:hover {
+    color: #cc0000;         /* Cambia el color al pasar el mouse (opcional) */
+  }

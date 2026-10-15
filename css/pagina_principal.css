@@ -1,0 +1,301 @@
+
+::selection { background: rgba(0,0,0,0.15); } /* personalizar o dejar transparente */
+
+
+.cuadro1 {
+  width: 100%;
+  max-width: 1500px;
+  margin: -0.5rem auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #2c3e50;
+  padding: 0;
+}
+
+.title1 {
+  width: 100%;
+  font-size: 2rem;
+  background: #2c3e50;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.cabecera-titulo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.icono-titulo {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin-left: -1rem;
+  align-self: center !important;
+}
+
+.icono-titulo1 {
+  order: -2;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-left: 1rem;
+  align-self: center;
+}
+
+.icono-titulo,
+.icono-titulo1 {
+  position: relative;
+  aspect-ratio: 2/1;
+  object-fit: contain;
+}
+
+
+/*   titulo prueba*/
+
+.carrusel-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+
+
+
+.parent {
+  display: grid;
+  grid-auto-flow: column;           /* flujo horizontal */
+  grid-auto-columns: 550px;         /* cada columna mide 200px */
+  grid-template-rows: repeat(2, auto); /* dos filas */
+  gap: 1px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+       
+.news {
+  scroll-snap-align: start;
+  background: #ffffff;
+  padding: 2px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  height: 100%;         /* se adapta a la fila */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+  .news {
+    flex: 0 0 100%;
+  }
+}
+
+
+
+
+
+/* Encabezado y pie de página ocupan toda la fila */
+.header,
+.footer {
+  grid-column: 1 / -1;
+  background-color: #2c3e50;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.header,.footer{
+  color: #fff;
+}
+.escudo{
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin-left: -1rem;
+  align-self: center
+}
+
+/* Noticias en columnas */
+
+
+
+.cuadro-noticia {
+  /* espaciado entre noticias si tienes varias en la página */
+ 
+  border-radius: 10px;
+  overflow: hidden;
+  /* opcional: sombra suave para resaltar la tarjeta */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+  background: #c7c7c7;
+}
+
+.noticia-recorte {
+  padding: 1px;
+}
+
+.noticia-contenedor {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* ajusta ancho de imagen y contenido */
+gap: 1px;
+  align-items: stretch;
+}
+
+.noticia-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.noticia-detalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.noticia-detalle h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.noticia-detalle p {
+  margin: 0 0 1rem;
+  color: #555;
+}
+
+.noticia-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.noticia-fecha {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.noticia-boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  background: #2c3e50;
+}
+
+.columna-noticias {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem; /* separación entre noticias en la misma columna */
+}
+
+.imagen-noticia {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+     @media (max-width: 768px) {
+  .noticia-contenedor {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .noticia-imagen {
+    max-height: 180px;
+    overflow: hidden;
+  }
+
+.noticia-imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+}
+
+.cabecera-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icono-titulo {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin-left: -1rem;
+  align-self: flex-end !important;
+}
+
+.icono-titulo1 {
+  order: -2;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-left: 1rem;
+  align-self: center;
+}
+
+.icono-titulo,
+.icono-titulo1 {
+  position: relative;
+  aspect-ratio: 2/1;
+  object-fit: contain;
+}
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Wrapper del carrusel */
+#miCarouselWrapper {
+  padding: 8px;
+  background: transparent;
+}
+
+/* Carrusel con delineado negro simple */
+#miCarousel {
+  border: 1px solid #000;   /* delineado negro */
+  border-radius: 6px;       /* esquinas suaves */
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Imágenes dentro del carrusel */
+#miCarousel .carousel-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Asegurar que las flechas o controles se vean siempre */
+#miCarousel button,
+#miCarousel .carousel-control {
+  z-index: 10;
+}
+
+

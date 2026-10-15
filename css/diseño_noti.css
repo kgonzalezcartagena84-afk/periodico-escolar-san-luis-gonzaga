@@ -1,0 +1,171 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fondo general */
+body {
+    background-color: #ffffff;
+    color:#000000 ;
+}
+
+/* Encabezado con estilo nube */
+header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #2f3a52;
+    border-radius: 5px;
+}
+
+/* Distribución de contenido */
+main {
+  display: flex;
+  justify-content: center;     /* centra horizontalmente */
+  align-items: center;         /* centra verticalmente */
+  height: 100%;                /* ocupa toda la pantalla */
+  padding: 20px;
+}
+
+
+
+
+/* Contenido principal */
+.contenido {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.otras-noticias .noticia img {
+  width: 100%;            /* ocupa todo el ancho del contenedor */
+  height: 180px;          /* altura fija para uniformidad */
+  object-fit: cover;      /* recorta la imagen sin deformarla */
+  border-radius: 5px;
+  display: block;
+}
+.noticia-principal h2 {
+    color: #2f3a52;
+    margin-top: 10px;
+}
+
+.noticia-principal p {
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.noticia-principal .fecha {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #000000;
+}
+
+/* Otras noticias */
+.otras-noticias {
+    margin-top: 40px;
+}
+
+.otras-noticias h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.otras-noticias-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+
+
+.otras-noticias .noticia {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* distribuye contenido arriba y abajo */
+  min-height: 250px;              /* altura mínima para que haya espacio */
+  background-color: #2c3e50;
+  padding: 8px;
+  border-radius: 10px;
+  text-align: justify;
+  width: 45%;
+  transition: transform 0.3s ease;
+}
+
+.otras-noticias .noticia:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.796);
+}
+
+.otras-noticias .noticia img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.otras-noticias .noticia p {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .noticia-principal img {
+    max-width: 100%;
+    aspect-ratio: auto;
+  }
+}
+
+.noticia-principal img {
+  width: 100%;            /* se adapta al ancho del contenedor */
+  max-width: 800px;       /* tamaño máximo en pantallas grandes */
+  height: auto;           /* mantiene proporción original */
+  aspect-ratio: 16 / 9;   /* define proporción visual (opcional) */
+  object-fit: cover;      /* recorta sin deformar */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.otras-noticias .noticia .Fecha {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: auto; /* empuja hacia abajo dentro del flex container */
+}
+
+.otras-noticias-container > div {
+  flex: 1 1 500px;
+}
+
+.fecha {
+  margin-top: auto;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+h1 {
+  font-family: 'cambria', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2 {
+  font-family: 'cambria', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+

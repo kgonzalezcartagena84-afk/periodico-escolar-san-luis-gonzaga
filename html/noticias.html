@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - Periódico Escolar Digital | I.E. San Luis Gonzaga & SENA</title>
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="../css/noticias.css">
+</head>
+<body>
+    <!-- Top Utility Ribbon -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__group">
+                <span class="topbar__date">
+                    <span aria-hidden="true">📅</span>
+                    <span id="desktop-live-date"></span>
+                </span>
+                <span class="topbar__divider">|</span>
+                <span class="topbar__live">
+                    <span class="topbar__dot"></span>
+                    <span>Edición Digital • Publicación Semanal</span>
+                </span>
+            </div>
+            <div class="topbar__badges">
+                <div class="topbar__badges">
+                    <span class="topbar__badge" title="I.E. San Luis Gonzaga">
+                        <span aria-hidden="true">🏫</span>
+                        <span>I.E. San Luis Gonzaga</span>
+                    </span>
+                    <span class="topbar__divider">•</span>
+                    <span class="topbar__badge topbar__badge--sena" title="Convenio de Articulación SENA">
+                        <span aria-hidden="true">🎓</span>
+                        <span>Articulación SENA</span>
+                    </span>
+                </div>
+                <div class="topbar__social">
+                    <a href="#" title="Facebook Institucional" aria-label="Facebook Institucional">f</a>
+                    <a href="#" title="Instagram" aria-label="Instagram">📸</a>
+                    <a href="#" title="YouTube" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__row">
+
+                <a href="../index.html" class="brand" aria-label="Volver al inicio">
+                    <div class="">
+                        <img src="../img/escudocolegio.png" alt="Escudo de la institución" />
+                    </div>
+                    <div>
+                        <span class="brand__eyebrow">
+                            <span aria-hidden="true">🏆</span> I.E. SAN LUIS GONZAGA
+                        </span>
+                        <h1 class="brand__title">PERIÓDICO ESCOLAR</h1>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a href="../index.html" class="nav__link nav__link--active">
+                        <span class="nav__dot"></span>
+                        Inicio
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="container main">
+        <!-- Section title + filters -->
+        <section class="section-heading">
+            <div>
+                <div class="section-heading__badge">
+                    <span aria-hidden="true">📰</span>
+                    <span>Periodismo Digital Estudiantil • San Luis Gonzaga</span>
+                </div>
+                <h2 class="section-heading__title font-serif">Noticias</h2>
+                <p class="section-heading__desc">
+                    Entérate de lo que pasa en nuestra comunidad educativa: logros académicos, proyectos SENA,
+                    deportes y vida escolar.
+                </p>
+            </div>
+            <div class="filters" id="category-filters">
+                <button data-category="all" class="filter-btn active-filter">
+                    <span aria-hidden="true">🗂️</span>
+                    Todas
+                </button>
+                <button data-category="institucional" class="filter-btn">
+                    <span class="filter-dot filter-dot--institucional"></span> Institucional
+                </button>
+                <button data-category="academico" class="filter-btn">
+                    <span class="filter-dot filter-dot--academico"></span> Académico
+                </button>
+                <button data-category="deportes" class="filter-btn">
+                    <span class="filter-dot filter-dot--deportes"></span> Deportes
+                </button>
+                <button data-category="cultura" class="filter-btn">
+                    <span class="filter-dot filter-dot--cultura"></span> Cultura
+                </button>
+                <button data-category="eventos" class="filter-btn">
+                    <span class="filter-dot filter-dot--eventos"></span> Eventos
+                </button>
+                <button data-category="comunidad" class="filter-btn">
+                    <span class="filter-dot filter-dot--comunidad"></span> Comunidad
+                </button>
+            </div>
+        </section>
+        <!-- Hero featured news -->
+                <div class="hero__footer">
+                    <div class="hero__author">
+                        <div class="hero__avatar">
+                            <span aria-hidden="true">✍️</span>
+                        </div>
+                        <div>
+                            <span class="hero__author-name">Redacción Periodismo Escolar</span>
+                            <span class="hero__author-role">Comité Estudiantil</span>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!-- Main feed + sidebar -->
+        <section class="layout">
+            <div class="layout__main">
+                <div class="feed-header">
+                    <h3 class="feed-header__title font-serif">
+                        <span aria-hidden="true">📰</span>
+                        Portada de Publicaciones
+                    </h3>
+                    <span id="news-count" class="feed-count">
+                        Mostrando 6 artículos
+                    </span>
+                </div>
+                <div id="news-grid" class="news-grid">
+                    <!-- Cards are dynamically rendered with JS to allow instant live search & category filtering -->
+                </div>
+                <div id="no-news" class="empty-state hidden">
+                    <div class="empty-state__icon">
+                        <span aria-hidden="true">🔎</span>
+                    </div>
+                    <h4 class="empty-state__title font-serif">No se encontraron artículos</h4>
+                    <p class="empty-state__text">Prueba seleccionando otra categoría de la barra superior o limpiando
+                        tu término de búsqueda.</p>
+                    <button onclick="resetFilters()" class="empty-state__btn">
+                        Restablecer Filtros
+                    </button>
+                </div>
+            </div>
+            <aside class="layout__sidebar">
+                <!-- WIDGET 1: Lo Más Leído -->
+                <div class="widget">
+                    <h4 class="widget__title font-serif">
+                        <span class="widget__title-main">
+                            <span aria-hidden="true">🔥</span>
+                            Lo Más Leído
+                        </span>
+                        <span class="widget__title-tag">Tendencias</span>
+                    </h4>
+
+                    <div class="trending-list">
+                        <div class="trending-item" onclick="openNewsModal(0)">
+                            <span class="trending-item__rank font-serif"></span>
+                            <div>
+                                <h5 class="trending-item__title">
+                                   
+                                </h5>
+                                <div class="trending-item__meta">
+                                    <span><span aria-hidden="true">👁️</span> </span>
+                                    <span>•</span>
+                                    <strong></strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trending-item" onclick="openNewsModal(3)">
+                            <span class="trending-item__rank font-serif"></span>
+                            <div>
+                                <h5 class="trending-item__title">
+                                   
+                                </h5>
+                                <div class="trending-item__meta">
+                                    <span><span aria-hidden="true">👁️</span> </span>
+                                    <span>•</span>
+                                    <strong></strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="trending-item" onclick="openNewsModal(2)">
+                            <span class="trending-item__rank font-serif"></span>
+                            <div>
+                                <h5 class="trending-item__title">
+                                   
+                                </h5>
+                                <div class="trending-item__meta">
+                                    <span><span aria-hidden="true">👁️</span> </span>
+                                    <span>•</span>
+                                    <strong></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WIDGET 2: Agenda Escolar -->
+                <div class="widget agenda">
+                    <div class="agenda__glow"></div>
+
+                    <div class="widget__title agenda__title font-serif">
+                        <span class="widget__title-main">
+                            <span aria-hidden="true">✅</span>
+                            Agenda Escolar
+                        </span>
+                        <span class="agenda__tag">2026</span>
+                    </div>
+
+                    <div class="agenda-list">
+                        <div class="agenda-item">
+                            <div class="agenda-item__date agenda-item__date--blue">
+                                <span class="agenda-item__month">DIC</span>
+                                <span class="agenda-item__day">01</span>
+                            </div>
+                            <div>
+                                <h5 class="agenda-item__title">Ceremonia de grados</h5>
+                                <p class="agenda-item__time"><span aria-hidden="true">⏰</span>
+                                    5:00 PM • Cancha Principal</p>
+                            </div>
+                        </div>
+
+                        <div class="agenda-item">
+                            <div class="agenda-item__date agenda-item__date--indigo">
+                                <span class="agenda-item__month">NOV</span>
+                                <span class="agenda-item__day">17</span>
+                            </div>
+                            <div>
+                                <h5 class="agenda-item__title">Grados de media tecnica SENA</h5>
+                                <p class="agenda-item__time"><span aria-hidden="true">⏰</span>
+                                    8:00 AM • Cancha Principal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <!-- News reader modal -->
+    <div id="news-modal" class="modal hidden" tabIndex="-1">
+
+        <div class="modal__dialog animate-fadeIn">
+
+            <div class="modal__header">
+                <div class="modal__meta">
+                    <span id="modal-category" class="modal__category">Categoría</span>
+                    <span id="modal-date" class="modal__date"><!-- Date --></span>
+                </div>
+
+                <div class="modal__tools">
+                    <div class="font-toggle">
+                        <span>Texto:</span>
+                        <button onclick="changeFontSize('sm')" class="font-toggle__btn"
+                            title="Texto pequeño">A-</button>
+                        <button onclick="changeFontSize('base')" class="font-toggle__btn"
+                            title="Texto normal">A</button>
+                        <button onclick="changeFontSize('lg')" class="font-toggle__btn" title="Texto grande">A+</button>
+                    </div>
+
+                    <button onclick="closeNewsModal()" class="modal__close" aria-label="Cerrar modal">
+                        <span aria-hidden="true">✕</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal__body">
+
+                <div>
+                    <h2 id="modal-title" class="modal__title font-serif"><!-- News Title --></h2>
+                    <div class="modal__submeta">
+                        <div class="modal__submeta-left">
+                            <span id="modal-author" class="modal__author"><span aria-hidden="true">✍️</span>
+                                Autor</span>
+                            <span id="modal-readtime"><span aria-hidden="true">⏰</span> Tiempo de lectura</span>
+                        </div>
+                        <span class="modal__official"><span aria-hidden="true">🛡️</span>
+                            Publicación Digital Oficial</span>
+                    </div>
+                </div>
+
+                <div class="modal__image">
+                    <img id="modal-img" src="" alt="">
+                </div>
+
+                <div id="modal-content" class="modal__content text-reader-base">
+                    <!-- Dynamic Full Content -->
+                </div>
+
+                <div class="modal__quote">
+                    <p id="modal-quote" class="modal__quote-text font-serif">
+                        "La educación y el periodismo colaborativo fortalecen los valores democráticos de nuestra
+                        juventud escolar."
+                    </p>
+                    <span class="modal__quote-author">— Rectoría I.E. San Luis Gonzaga & Coordinación SENA</span>
+                </div>
+
+            </div>
+
+            <div class="modal__footer">
+                <div class="modal__like">
+                    <span>¿Te pareció interesante este artículo?</span>
+                    <button onclick="likeArticle()" id="like-btn" class="like-btn">
+                        <span aria-hidden="true">👍</span>
+                        <span id="like-count">124</span>
+                    </button>
+                </div>
+
+                <button onclick="shareArticle()" class="share-btn">
+                    <span aria-hidden="true">🔗</span>
+                    <span>Copiar enlace de noticia</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Institutional partnership -->
+    <section class="partners">
+        <div class="container partners__inner">
+
+            <div class="partners__info">
+                <p class="partners__eyebrow">Órgano Informativo Estudiantil</p>
+                <h3 class="partners__title font-serif">Institución Educativa San Luis Gonzaga</h3>
+                <p class="partners__desc">
+                    Comprometidos con la excelencia académica, la ciencia, la cultura y el desarrollo técnico
+                    laboral en articulación estratégica con el SENA.
+                </p>
+            </div>
+
+            <div class="partners__logos">
+                <div class="partners__logo">
+                    <div class="partners__logo-icon partners__logo-icon--navy font-serif">SLG</div>
+                    <div>
+                        <span class="partners__logo-name">I.E. San Luis Gonzaga</span>
+                        <span class="partners__logo-sub">Sede Principal • Colombia</span>
+                    </div>
+                </div>
+
+                <div class="partners__divider"></div>
+
+                <div class="partners__logo">
+                    <div class="partners__logo-icon partners__logo-icon--emerald">
+                        <span aria-hidden="true">🎓</span>
+                    </div>
+                    <div>
+                        <span class="partners__logo-name">SENA</span>
+                        <span class="partners__logo-sub">Articulación Técnica Laboral</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer__grid">
+
+            <div>
+                <div class="footer__brand">
+                    <div class="footer__brand-icon">
+                        <span aria-hidden="true">📰</span>
+                    </div>
+                    <span class="footer__brand-name font-serif">PERIÓDICO ESCOLAR</span>
+                </div>
+                <p class="footer__desc">
+                    Edición digital administrada por el Comité Estudiantil de Periodismo de la I.E. San Luis Gonzaga
+                    en articulación con el SENA.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footer__heading">Secciones Principales</h4>
+                <ul class="footer__list">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#noticias" class="active">Noticias y Proyectos SENA</a></li>
+                    <li><a href="#eventos">Agenda de Eventos</a></li>
+                    <li><a href="#galeria">Galería Fotográfica</a></li>
+                    <li><a href="#reseña">Reseña Histórica</a></li>
+                    <li><a href="#creadores">Comité Creadores</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer__heading">Categorías Noticiosas</h4>
+                <ul class="footer__list">
+                    <li><a href="#noticias" onclick="setCategoryFilter('institucional')">Noticias Institucionales</a>
+                    </li>
+                    <li><a href="#noticias" onclick="setCategoryFilter('academico')">Logros Académicos</a></li>
+                    <li><a href="#noticias" onclick="setCategoryFilter('deportes')">Torneos Deportivos</a></li>
+                    <li><a href="#noticias" onclick="setCategoryFilter('cultura')">Muestras Culturales</a></li>
+                    <li><a href="#noticias" onclick="setCategoryFilter('comunidad')">Comunidad y SENA</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer__heading">Contacto Institucional</h4>
+                <div class="footer__contact">
+                    <span><span aria-hidden="true">✉️</span> periodico@sanluisgonzaga.edu.co</span>
+                    <span><span aria-hidden="true">📍</span> Sede Central, Bloque A, Laboratorio de
+                        Periodismo</span>
+                    <span><span aria-hidden="true">⏰</span> Horario: Lunes a Viernes 7:00 AM - 3:00 PM</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container footer__bottom">
+            <p>&copy; 2026 Periódico Escolar Digital — I.E. San Luis Gonzaga & SENA. Todos los derechos reservados.</p>
+            <div class="footer__social">
+                <a href="#"><span aria-hidden="true">f</span><span>Facebook</span></a>
+                <a href="#"><span aria-hidden="true">📸</span><span>Instagram</span></a>
+                <a href="#"><span aria-hidden="true">▶️</span><span>YouTube</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function imageFrom(source) {
+            if (!source) return 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop';
+
+            const value = String(source).trim();
+            const isRemote = /^(https?:)?\/\//i.test(value) || value.startsWith('data:image/');
+
+            if (isRemote) {
+                return value;
+            }
+
+            if (value.startsWith('../')) return value;
+            if (value.startsWith('/img/')) return `..${value}`;
+            if (value.startsWith('./img/')) return `../${value.slice(2)}`;
+            if (value.startsWith('img/')) return `../${value}`;
+
+            return `../img/${value.replace(/^\.\//, '')}`;
+        }
+        const fallbackNewsDatabase = [
+            {
+                id: 1,
+                title: 'Identidad, memoria y futuro',
+                category: 'institucional',
+                categoryLabel: 'Institucional',
+                date: '20 de julio de 2025',
+                readTime: '4 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('img_noti3.jpeg'),
+                featuredSize: true,
+                excerpt: 'Hoy no solo celebramos la independencia, renovamos el compromiso de construir una patria libre desde la educación y la memoria histórica.',
+                fullContent: '<p>En una jornada cargada de significado, la comunidad educativa recordó la importancia de la memoria histórica y la identidad nacional.</p><p>La celebración fue un llamado a fortalecer la educación como base del progreso colectivo y del compromiso ciudadano.</p><p>La actividad reunió a estudiantes, docentes y familias en una reflexión sobre el valor de la libertad, la historia y el futuro.</p>',
+                quote: 'La educación es la forma más sólida de construir un futuro libre y consciente.',
+                likes: 164
+            },
+            {
+                id: 2,
+                title: 'Tradición, Cultura y Juventud en Marcha',
+                category: 'cultura',
+                categoryLabel: 'Cultura',
+                date: '15 de septiembre de 2025',
+                readTime: '4 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('noti0.jpeg'),
+                featuredSize: false,
+                excerpt: 'La institución abrió un espacio para reconocer la riqueza cultural del territorio y el papel transformador de la juventud en la comunidad.',
+                fullContent: '<p>La jornada celebró la tradición, la identidad regional y la creatividad del alumnado como pilares fundamentales de la vida escolar.</p><p>Los estudiantes participaron de manera activa en actividades que valoraron la historia, las costumbres y la participación comunitaria.</p><p>La experiencia dejó claro que la cultura no solo se conserva, también se proyecta y se fortalece entre generaciones.</p>',
+                quote: 'La tradición se vive con orgullo cuando la juventud la hace presente en el presente.',
+                likes: 154
+            },
+            {
+                id: 3,
+                title: 'IV OLIMPIADAS MATEMÁTICAS 2025',
+                category: 'academico',
+                categoryLabel: 'Académico',
+                date: '19 de septiembre de 2025',
+                readTime: '5 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('img_noti8.jpeg'),
+                featuredSize: false,
+                excerpt: 'Talento y pasión se reunieron en una competencia que celebró el pensamiento lógico, la creatividad y la capacidad matemática del estudiantado.',
+                fullContent: '<p>La competencia reunió a estudiantes con interés por las matemáticas y la resolución de problemas en escenarios desafiantes.</p><p>La participación evidenció creatividad, disciplina y la capacidad de pensar con rigor y perseverancia.</p><p>La actividad fue un reconocimiento al esfuerzo académico y al valor del pensamiento lógico en la formación integral.</p>',
+                quote: 'Las matemáticas también son una forma de pensar, crear y resolver problemas con imaginación.',
+                likes: 170
+            },
+            {
+                id: 4,
+                title: 'Inspiración que transforma',
+                category: 'institucional',
+                categoryLabel: 'Institucional',
+                date: '15 de septiembre de 2025',
+                readTime: '4 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('img.noti6.jpeg'),
+                featuredSize: false,
+                excerpt: 'Emilio García recordó que el éxito se construye con valores, disciplina y una educación integral que abraza el talento y la trayectoria.',
+                fullContent: '<p>La historia de Emilio García fue compartida como un ejemplo de esfuerzo, perseverancia y sentido de propósito.</p><p>Su relato inspiró a los estudiantes a creer en sus capacidades y a construir caminos con responsabilidad y visión.</p><p>La experiencia reafirmó el papel de la educación como camino para transformar sueños en realidades concretas.</p>',
+                quote: 'La inspiración llega cuando las historias muestran que todo esfuerzo puede convertirse en propósito.',
+                likes: 148
+            },
+            {
+                id: 5,
+                title: 'Inspiración que deja huella',
+                category: 'comunidad',
+                categoryLabel: 'Comunidad',
+                date: '15 de septiembre de 2025',
+                readTime: '3 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('img_noti12.jpeg'),
+                featuredSize: false,
+                excerpt: 'Julián Cardona compartió su historia de esfuerzo para motivar a jóvenes a perseguir sueños con trabajo y determinación.',
+                fullContent: '<p>La historia del joven emprendedor fue un ejemplo de dedicación, disciplina y visión de futuro para la comunidad educativa.</p><p>Su experiencia inspiró a estudiantes a construir metas con constancia y a valorar el proceso de aprendizaje.</p><p>La actividad planteó la educación como base para transformar sueños en oportunidades reales y sostenibles.</p>',
+                quote: 'La verdadera inspiración se convierte en ejemplo cuando acompaña la acción y la constancia.',
+                likes: 143
+            },
+            {
+                id: 6,
+                title: 'FERIA DE LA CIENCIA',
+                category: 'academico',
+                categoryLabel: 'Académico',
+                date: '16 de octubre de 2025',
+                readTime: '5 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('img_noti15.jpeg'),
+                featuredSize: false,
+                excerpt: 'Los estudiantes revivieron grandes ideas científicas y presentaron proyectos con creatividad, rigor y sentido social.',
+                fullContent: '<p>La feria de la ciencia fue una experiencia de descubrimiento, creatividad y aprendizaje colaborativo para toda la comunidad.</p><p>Estudiantes de diferentes grados mostraron proyectos inspirados en la ciencia, la investigación y el impacto social.</p><p>La actividad permitió reconocer el talento joven y su capacidad para transformar ideas en propuestas relevantes para la sociedad.</p>',
+                quote: 'La ciencia no solo explica el mundo, también nos invita a mejorarlo con creatividad.',
+                likes: 189
+            },
+            {
+                id: 7,
+                title: '!!Manos a la obra!!',
+                category: 'comunidad',
+                categoryLabel: 'Comunidad',
+                date: '21 de agosto de 2025',
+                readTime: '3 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('img_sena1.jpeg'),
+                featuredSize: false,
+                excerpt: 'La visita a la Planta de Chocolate permitió a los jóvenes aplicar conocimientos técnicos y valorar el impacto del trabajo en equipo.',
+                fullContent: '<p>La salida pedagógica conectó el aula con la realidad productiva del territorio y fortaleció la formación técnica de los estudiantes.</p><p>El trabajo en equipo, la observación y la reflexión crítica quedaron presentes durante toda la experiencia.</p><p>La visita siguió promoviendo la articulación entre la educación y el mundo laboral de manera significativa.</p>',
+                quote: 'Cuando se aprende haciendo, cada conocimiento adquiere sentido y valor real.',
+                likes: 159
+            },
+            {
+                id: 8,
+                title: 'Tecnología con propósito',
+                category: 'comunidad',
+                categoryLabel: 'Comunidad',
+                date: '15 de marzo de 2023',
+                readTime: '4 min de lectura',
+                author: 'Redacción Periodismo Escolar',
+                image: imageFrom('img_sena2.jpeg'),
+                featuredSize: false,
+                excerpt: 'Los estudiantes vivieron la tecnología como herramienta para aprender, crear y construir un futuro con visión crítica y responsabilidad.',
+                fullContent: '<p>La experiencia tecnológica permitió a los jóvenes explorar herramientas digitales con un enfoque pedagógico y social.</p><p>La actividad resaltó el valor de la innovación como recurso para resolver problemas reales y fortalecer la formación académica.</p><p>El proyecto reforzó el papel de la tecnología como aliada de la educación y del compromiso ciudadano.</p>',
+                quote: 'La tecnología se vuelve poderosa cuando se usa con conciencia, creatividad y propósito.',
+                likes: 176
+            }
+        ];
+
+        let newsDatabase = [...fallbackNewsDatabase];
+        let activeCategory = 'all';
+        let searchQuery = '';
+        let currentModalNewsId = 0;
+
+        const categoryLabels = {
+            institucional: 'Institucional',
+            academico: 'Académico',
+            deportes: 'Deportes',
+            cultura: 'Cultura',
+            eventos: 'Eventos',
+            comunidad: 'Comunidad'
+        };
+
+        async function cargarNoticiasDesdeBD() {
+            try {
+                const response = await fetch('../php/site_data.php');
+                if (!response.ok) throw new Error('Sin datos');
+                const data = await response.json();
+                if (Array.isArray(data.noticias) && data.noticias.length > 0) {
+                    newsDatabase = data.noticias.map((item, index) => {
+                        const texto = (item.titulo || item.resumen || '').toLowerCase();
+                        let category = 'institucional';
+                        if (texto.includes('sena') || texto.includes('proyecto')) category = 'comunidad';
+                        if (texto.includes('deporte') || texto.includes('futbol')) category = 'deportes';
+                        if (texto.includes('ciencia') || texto.includes('academ')) category = 'academico';
+                        if (texto.includes('danza') || texto.includes('cultura')) category = 'cultura';
+                        if (texto.includes('evento') || texto.includes('orienta')) category = 'eventos';
+
+                        const body = (item.contenido || item.resumen || '').replace(/\n+/g, ' ').trim();
+                        return {
+                            id: Number(item.id),
+                            title: item.titulo,
+                            category,
+                            categoryLabel: categoryLabels[category] || 'Institucional',
+                            date: new Date(item.fecha || Date.now()).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }),
+                            readTime: '4 min de lectura',
+                            author: 'Redacción Periodismo Escolar',
+                            image: imageFrom(item.imagen),
+                            featuredSize: index === 0,
+                            excerpt: item.resumen || body,
+                            fullContent: `<p>${(body || item.resumen || 'Contenido disponible en la administración del sitio.').replace(/\s{2,}/g, '</p><p>')}</p>`,
+                            quote: item.resumen || 'La educación y el periodismo son herramientas para transformar la comunidad.',
+                            likes: 90 + Number(item.id) * 6
+                        };
+                    });
+                }
+            } catch (error) {
+                newsDatabase = [...fallbackNewsDatabase];
+            }
+
+            renderNewsGrid();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarNoticiasDesdeBD();
+            setupSearchListeners();
+            setupFilterListeners();
+        });
+
+        // Render News Grid with multi-size layout variations
+        function renderNewsGrid() {
+            const gridContainer = document.getElementById('news-grid');
+            const noNewsContainer = document.getElementById('no-news');
+            const newsCountLabel = document.getElementById('news-count');
+
+            const filteredNews = newsDatabase.filter(news => {
+                const matchesCategory = activeCategory === 'all' || news.category === activeCategory;
+                const matchesSearch = news.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    news.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    news.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            newsCountLabel.textContent = `Mostrando ${filteredNews.length} artículo${filteredNews.length === 1 ? '' : 's'}`;
+
+            if (filteredNews.length === 0) {
+                gridContainer.innerHTML = '';
+                noNewsContainer.classList.remove('hidden');
+                return;
+            }
+
+            noNewsContainer.classList.add('hidden');
+
+            gridContainer.innerHTML = filteredNews.map((news) => {
+                const isFeature = news.featuredSize && activeCategory === 'all' && searchQuery === '';
+
+                return `
+                    <article class="news-card${isFeature ? ' news-card--featured' : ''}" onclick="openNewsModal(${news.id})">
+                        <div class="news-card__inner">
+                            <div class="news-card__media">
+                                <img src="${news.image}" alt="${news.title}" class="news-card__img" loading="lazy">
+                                <span class="news-card__badge badge--${news.category}">
+                                    ${news.categoryLabel}
+                                </span>
+                            </div>
+
+                            <div class="news-card__body">
+                                <div>
+                                    <div class="news-card__meta">
+                                        <span><span aria-hidden="true">📅</span> ${news.date}</span>
+                                        <span>•</span>
+                                        <span><span aria-hidden="true">⏰</span> ${news.readTime}</span>
+                                    </div>
+
+                                    <h4 class="news-card__title font-serif">
+                                        ${news.title}
+                                    </h4>
+
+                                    <p class="news-card__excerpt">
+                                        ${news.excerpt}
+                                    </p>
+                                </div>
+
+                                <div class="news-card__footer">
+                                    <span class="news-card__author">${news.author}</span>
+                                    <span class="news-card__readmore">
+                                        Leer más <span aria-hidden="true">→</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function setupSearchListeners() {
+            const searchInput = document.getElementById('desktop-search-input');
+            const clearBtn = document.getElementById('desktop-clear-search');
+
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim();
+                if (searchQuery.length > 0) {
+                    clearBtn.classList.remove('hidden');
+                } else {
+                    clearBtn.classList.add('hidden');
+                }
+                renderNewsGrid();
+            });
+
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                searchQuery = '';
+                clearBtn.classList.add('hidden');
+                renderNewsGrid();
+            });
+        }
+
+        function setupFilterListeners() {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active-filter'));
+                    btn.classList.add('active-filter');
+                    activeCategory = btn.getAttribute('data-category');
+                    renderNewsGrid();
+                });
+            });
+        }
+
+        function setCategoryFilter(cat) {
+            activeCategory = cat;
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.toggle('active-filter', btn.getAttribute('data-category') === cat);
+            });
+            renderNewsGrid();
+        }
+
+        function resetFilters() {
+            activeCategory = 'all';
+            searchQuery = '';
+            document.getElementById('desktop-search-input').value = '';
+            document.getElementById('desktop-clear-search').classList.add('hidden');
+            setCategoryFilter('all');
+        }
+
+        // News Modal Controller
+        function openNewsModal(id) {
+            const news = newsDatabase.find(item => item.id === id);
+            if (!news) return;
+
+            currentModalNewsId = id;
+
+            const modalCategory = document.getElementById('modal-category');
+            modalCategory.textContent = news.categoryLabel;
+            modalCategory.className = `modal__category badge--${news.category}`;
+            document.getElementById('modal-date').textContent = news.date;
+            document.getElementById('modal-title').textContent = news.title;
+            document.getElementById('modal-author').innerHTML = `<span aria-hidden="true">✍️</span> ${news.author}`;
+            document.getElementById('modal-readtime').innerHTML = `<span aria-hidden="true">⏰</span> ${news.readTime}`;
+            const modalImage = document.getElementById('modal-img');
+            modalImage.src = imageFrom(news.image);
+            modalImage.alt = news.title;
+            document.getElementById('modal-content').innerHTML = news.fullContent;
+            document.getElementById('modal-quote').textContent = `"${news.quote}"`;
+            document.getElementById('like-count').textContent = news.likes;
+
+            const modal = document.getElementById('news-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            modal.focus();
+        }
+
+        function closeNewsModal() {
+            const modal = document.getElementById('news-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function changeFontSize(size) {
+            const content = document.getElementById('modal-content');
+            content.classList.remove('text-reader-sm', 'text-reader-base', 'text-reader-lg');
+            content.classList.add(`text-reader-${size}`);
+        }
+
+        function likeArticle() {
+            const news = newsDatabase.find(item => item.id === currentModalNewsId);
+            if (news) {
+                news.likes += 1;
+                document.getElementById('like-count').textContent = news.likes;
+                document.getElementById('like-btn').classList.add('like-btn--liked');
+            }
+        }
+
+        function shareArticle() {
+            const news = newsDatabase.find(item => item.id === currentModalNewsId);
+            const textToCopy = `${news.title} - Periódico Escolar I.E. San Luis Gonzaga & SENA`;
+
+            const dummy = document.createElement('textarea');
+            document.body.appendChild(dummy);
+            dummy.value = textToCopy;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+
+            alert('¡Enlace de la noticia copiado exitosamente al portapapeles!');
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeNewsModal();
+        });
+
+        // Click outside modal to close
+        document.getElementById('news-modal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('news-modal')) {
+                closeNewsModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

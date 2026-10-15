@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREDITOS</title>
+    <link rel="stylesheet" href="../css/creditoss.css">
+</head>
+
+<body>
+
+
+    <!-- Botón siempre visible en la esquina superior derecha -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+        <span>☰</span>
+    </button>
+
+    <!-- Menú oculto por defecto, desplegable en cualquier tamaño -->
+    <nav id="menu" class="menu-panel hidden">
+        <a href="../index.html">Inicio</a>
+        <a href="../html/creditoss.html">Creditos</a>
+        <a href="../html/reseña.html">Reseña Institucional</a>
+    </nav>
+
+    </div>
+    </header>
+    <div class="page-shell">
+        <header class="page-header">
+            <h1>Creditos del proyecto</h1>
+            <p>Este proyecto fue posible gracias a la Institución Educativa San Luis Gonzaga y al SENA, y, más importante aún, a los integrantes que trabajaron arduamente para lograr finalizarlo con gran esmero.</p>
+        </header>
+
+        <main class="page-section">
+            <h2 class="section-title">Conoce al equipo</h2>
+
+            <div class="team-list">
+                <article class="team-card">
+                    <div class="member-photo">
+                        <img alt="Ashley Eloisa Rivera Maya" src="../img/eloisa.jpeg">
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Ashley Eloisa Rivera Maya</h3>
+                        <p class="member-role">Lider de proyecto y programadora</p>
+                        <p class="member-bio">Soy Eloisa, estudiante próxima a graduarme de la Institución Educativa San Luis Gonzaga. Me considero una persona creativa, responsable y comprometida, con interés por aprender cosas nuevas y desarrollar mis habilidades a través de diferentes proyectos. A lo largo de mi formación, he desarrollado sólidas capacidades que me han permitido crecer como aprendiz y como persona. Disfruto de los tiempos tranquilos, donde puedo concentrarme, aprender y crear. Soy una persona animosa, comprometida y siempre dispuesta a dar lo mejor de mí para salir adelante.</p>
+                    </div>
+                </article>
+
+                <article class="team-card">
+                    <div class="member-photo">
+                        <img alt="Sara Michel Holguin Galeano" src="../img/sara.jpeg">
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Sara Michel Holguin Galeano</h3>
+                        <p class="member-role">Diseñadora</p>
+                        <p class="member-bio">Estudiante de 18 años, aplicada y dedicada en la técnica de programación de software. Actualmente curso estudios en la Institución Educativa San Luis Gonzaga, ubicada en el municipio de Santa Fé de Antioquia. Me considero una persona responsable con grandes metas, me gusta aprender, desarrollar mis habilidades y esforzarme por alcanzar cada uno de mis objetivos. Entre mis hábitos favoritos se encuentran: hacer ejercicio, practicar dibujo, disfrutar de películas y realizar actividades creativas.</p>
+                    </div>
+                </article>
+
+                <article class="team-card">
+                    <div class="member-photo">
+                        <img alt="Kevin Alejandro Gonzales Cartagena" src="../img/kevin.jpeg">
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Kevin Alejandro Gonzales Cartagena</h3>
+                        <p class="member-role">Analizador</p>
+                        <p class="member-bio">Soy Kevin Alejandro, un estudiante de 20 años. Soy de la técnica de programación de software, a la cual le tengo mucho interés, y también estudio en la Institución Educativa San Luis Gonzaga. Soy del grado 11, lo que significa que me graduo este año y también soy aprendiz del SENA en la media técnica de programación de software. Mis habilidades en la técnica son el lenguaje de programación HTML y CSS. Me gusta jugar videojuegos, ver anime y comer.</p>
+                    </div>
+                </article>
+
+                <article class="team-card">
+                    <div class="member-photo">
+                        <img alt="Valentina Mejia Yepez" src="../img/valentina.jpeg">
+                    </div>
+                    <div class="member-content">
+                        <h3 class="member-name">Valentina Mejia Yepez</h3>
+                        <p class="member-role">Desarrolladora</p>
+                        <p class="member-bio">Soy Valentina, estudiante de 16 años en la carrera de Programación de Software. Actualmente curso estudios en la Institución Educativa San Luis Gonzaga. Me considero una persona alegre, espontánea y perseverante. Valoro mucho a las personas que quiero, disfruto compartir buenos momentos y siempre trato de dar lo mejor de mí en cada situación. Habilidades técnicas: manejo de lenguajes de programación y dominio de software especializado. Me gusta aprender, ayudar a los demás y trabajar por mis metas.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="badges">
+                <h2 class="section-title">Escudos institucionales</h2>
+                <div class="badges-grid">
+                    <div class="badge-box">
+                        <img src="../img/escudoSena.png" alt="Escudo SENA">
+                    </div>
+                    <div class="badge-box">
+                        <img src="../img/escudocolegio.png" alt="Escudo Colegio">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 Periodico escolar Web. All rights reserved.</p>
+        </footer>
+    </div>
+
+
+    <script>
+        const toggleButton = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        // Mostrar/ocultar al presionar el botón
+        toggleButton.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        // Cerrar el menú al hacer clic en cualquier opción
+        const links = menu.querySelectorAll("a");
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.add("hidden");
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
